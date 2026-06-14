@@ -1,0 +1,36 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/registry/server.json",
+  "name": "groundroute",
+  "display_name": "GroundRoute Search",
+  "description": "Web search for agents — cross-customer pooled cache + price-led routing + reliability/failover, with usage governance. One search tool, OpenAI/Tavily-compatible.",
+  "version": "0.1.0",
+  "homepage": "https://groundroute.ai",
+  "documentation": "https://groundroute.ai/docs/mcp-server",
+  "categories": ["search", "web", "retrieval", "rag"],
+  "transports": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.groundroute.ai/mcp",
+      "auth": {
+        "type": "bearer",
+        "header": "Authorization",
+        "description": "Your GroundRoute API key as 'Bearer gr_...'. Get one at https://groundroute.ai/keys"
+      }
+    }
+  ],
+  "tools": [
+    {
+      "name": "search",
+      "description": "Search the live web across 6 engines and return ranked results (plus a synthesized answer for answer-class queries). Routes each query to the cheapest engine that meets the quality bar and caches repeats. Use this for any current-information, documentation, news, API, or research lookup.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search query" },
+          "max_results": { "type": "integer", "default": 5, "maximum": 50 },
+          "mode": { "type": "string", "enum": ["auto", "web", "news", "academic", "answer", "page"], "default": "auto" }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
