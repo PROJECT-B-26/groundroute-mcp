@@ -1,5 +1,7 @@
 # GroundRoute — web search MCP server
 
+[![smithery badge](https://smithery.ai/badge/groundroute-ai/web-search)](https://smithery.ai/servers/groundroute-ai/web-search)
+
 Give your AI agent **web search across 6 engines** (Serper, Brave, Exa, Tavily, Firecrawl, Perplexity) through **one** MCP `search` tool. GroundRoute routes each query to the cheapest engine that meets the quality bar, caches the repeats, and fails over automatically — so you get good results without overpaying or wiring up six APIs.
 
 - **Hosted** (no local process to run): `https://api.groundroute.ai/mcp` (streamable-HTTP)
