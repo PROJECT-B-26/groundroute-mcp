@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "required": ["apiKey"],
+  "properties": {
+    "apiKey": {
+      "type": "string",
+      "title": "GroundRoute API key",
+      "description": "Your gr_... API key from https://groundroute.ai/overview",
+      "x-to": { "header": "Authorization" }
+    }
+  }
+}
