@@ -43,6 +43,24 @@ Give your AI agent **web search across 6 engines** (Serper, Brave, Exa, Tavily, 
 } } }
 ```
 
+## Run this repo's stdio server (optional)
+
+This repo also ships a small native **stdio** MCP server (`server.py`) that forwards to the hosted API — useful for stdio-only clients or containerized runs.
+
+```bash
+pip install -r requirements.txt
+GROUNDROUTE_API_KEY=gr_YOUR_KEY python server.py
+```
+
+Or with Docker:
+
+```bash
+docker build -t groundroute-mcp .
+docker run -i -e GROUNDROUTE_API_KEY=gr_YOUR_KEY groundroute-mcp
+```
+
+Introspection (tool discovery) works with no key; running a search requires `GROUNDROUTE_API_KEY` (get one at https://groundroute.ai/keys).
+
 ## The `search` tool
 | Param | Type | Notes |
 |---|---|---|
