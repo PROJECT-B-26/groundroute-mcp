@@ -65,10 +65,14 @@ Introspection (tool discovery) works with no key; running a search requires `GRO
 | Param | Type | Notes |
 |---|---|---|
 | `query` | string | required |
-| `max_results` | integer | default 5, max 50 |
 | `mode` | enum | `auto` (default), `web`, `news`, `academic`, `answer`, `page` |
+| `max_results` | integer | default 10, max 50 |
+| `freshness` | enum | `fresh`, `semi`, `static`; omit to auto-detect |
+| `domains` | string[] | include-only domain filter, e.g. `["arxiv.org"]` |
+| `lang` | string | ISO 639-1 language code, e.g. `en` |
+| `country` | string | ISO 3166-1 alpha-2 country code, e.g. `us` |
 
-Returns ranked results (and a synthesized answer for answer-class queries). Routed, cached, and reliable.
+Returns a **structured result**: ranked `results` (url / title / snippet / content / source_engine / published_at), an optional synthesized `answer` with `citations` (answer mode), and `meta` (request_id / cache_tier / degraded / cost_usd). Routed, cached, and reliable.
 
 ## How it works
 One endpoint in front of many search engines, with price-led routing, caching, failover, and usage governance. See the [docs](https://groundroute.ai/docs/mcp-server) and the [State of AI Search benchmark](https://groundroute.ai/state-of-ai-search) (170 real agent queries across all 6 engines).
