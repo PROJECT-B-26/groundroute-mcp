@@ -1,0 +1,18 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GroundRoute web search MCP server">
+  <rect width="1200" height="320" rx="24" fill="#0a0a0a"/>
+
+  <!-- Brand mark: the canonical GroundRoute route glyph (two nodes + routed path), scaled from the 24x24 source in groundroute-web/components/RouteGlyph.tsx. -->
+  <g transform="translate(80 70) scale(7.5)" fill="none" stroke="#ffffff" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="6" cy="19" r="3"/>
+    <circle cx="18" cy="5" r="3"/>
+    <path d="M9 19h4a4 4 0 0 0 4-4V9"/>
+    <path d="M15 5h-4a4 4 0 0 0-4 4v6"/>
+  </g>
+
+  <!-- Wordmark + tagline -->
+  <g font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+    <text x="320" y="150" fill="#ffffff" font-size="88" font-weight="700" letter-spacing="-3">GroundRoute</text>
+    <text x="320" y="200" fill="#cfcfcf" font-size="30" font-weight="500">Cut your AI agent's search bill.</text>
+    <text x="320" y="244" fill="#828282" font-size="22" font-weight="400">One MCP tool. Six search engines. Routed and cached.</text>
+  </g>
+</svg>
